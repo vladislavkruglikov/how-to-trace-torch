@@ -1,0 +1,11 @@
+services:
+  dependencies:
+    image: "how-to-trace-torch-dependencies"
+    build:
+      context: "."
+      target: "dependencies"
+
+    tty: true
+
+    volumes:
+      - ./how-to-trace-torch:/opt/how-to-trace-torch
