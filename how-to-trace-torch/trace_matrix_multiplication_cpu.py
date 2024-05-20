@@ -3,7 +3,6 @@ import torch
 
 assert torch.__version__ == "2.3.0a0+6ddf5cf85e.nv24.04"
 
-
 with torch.profiler.profile(
     activities=[torch.profiler.ProfilerActivity.CPU], 
     record_shapes=True,
