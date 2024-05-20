@@ -3,7 +3,7 @@
 Build container with dependencies
 
 ```bash
-docker compose build dependencies
+docker compose build dependencies-cpu
 ```
 
 Now you have few options. First you can get into container via terminal
@@ -11,13 +11,13 @@ Now you have few options. First you can get into container via terminal
 Start container
 
 ```bash
-docker compose up -d dependencies
+docker compose up -d dependencies-cpu
 ```
 
 Get into started container
 
 ```bash
-docker compose exec -it dependencies bash
+docker compose exec -it dependencies-cpu bash
 ```
 
 And second option is to use visual studio extension that allows 

@@ -1,9 +1,28 @@
 services:
-  dependencies:
-    image: "how-to-trace-torch-dependencies"
+  dependencies-cpu:
+    image: "how-to-trace-torch-dependencies-cpu"
     build:
       context: "."
       target: "dependencies"
+
+    tty: true
+
+    volumes:
+      - ./how-to-trace-torch:/opt/how-to-trace-torch
+  
+  dependencies-gpu:
+    image: "how-to-trace-torch-dependencies-gpu"
+    build:
+      context: "."
+      target: "dependencies"
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]
 
     tty: true
 
